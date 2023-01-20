@@ -235,12 +235,17 @@ const gameBoard = (() => {
 
     div.classList.add("win");
     if (who === "One") {
-      h2.innerHTML = `${playerOne.name} won! 🎉`;
+      h2.innerHTML = `🎉 ${playerOne.name} won! 🎉`;
+      if (playerOne.name.length >= 10) {
+        h2.style.fontSize = "1rem";
+      }
     } else if (who === "Two") {
-      h2.innerHTML = `${playerTwo.name} won! 🎉`;
+      h2.innerHTML = `🎉 ${playerTwo.name} won! 🎉`;
+      if (playerTwo.name.length >= 10) {
+        h2.style.fontSize = "1rem";
+      }
     } else {
-      h2.innerHTML = `Draw(`;
-      h2.style.color = "black";
+      h2.innerHTML = `✨ Draw ✨`;
     }
 
     document.body.appendChild(div);
